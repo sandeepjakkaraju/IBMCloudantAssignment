@@ -12,6 +12,9 @@ class Controller(private val repository: PhoneBookRepository) {
     @DeleteMapping("/{id}")
     fun deletePhoneEntry(@PathVariable id: Long) = repository.deleteById(id);
 
+    @GetMapping("/{id}")
+    fun getPhoneEntry(@PathVariable id: Long) = repository.findById(id);
+
     @PostMapping("/", consumes = ["application/json"])
     fun save(@RequestBody phoneBook: PhoneBook): PhoneBook = repository.save(phoneBook);
 

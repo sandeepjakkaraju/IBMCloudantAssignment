@@ -1,13 +1,9 @@
 package com.sandeep
 
-import org.springframework.data.repository.CrudRepository
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
-interface PhoneBookRepository : CrudRepository<PhoneBook, Long> {
-    abstract fun findBySurName(surName: String?): List<PhoneBook>;
-}
 
 @Entity
 data class PhoneBook constructor(
